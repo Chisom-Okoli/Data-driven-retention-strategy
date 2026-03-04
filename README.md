@@ -114,6 +114,8 @@ Yearly members churn the least.
 Long-term commitment reduces churn.  
 Converting Monthly → Yearly could improve retention.
 
+https://github.com/Chisom-Okoli/Data-driven-retention-strategy/blob/main/churn%20membership%20typr%20chart.png
+
 
 ### Churn by Gender
 
