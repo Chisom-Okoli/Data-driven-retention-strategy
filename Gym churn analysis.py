@@ -2,31 +2,41 @@ import matplotlib.pyplot as plt
 import pandas as pd
 pd.read_csv
 df = pd.read_csv(r'C:\Users\DELL\Downloads\gym_members_dataset.csv')
+
+# Data Exploration
+
 print(df.head())
 print(df.info())
 print(df.isnull().sum())
+
+# Data Cleaning
+
 df['Name'] = df['Name'].fillna('Unknown')
 df['Age'] = df['Age'].fillna(df['Age'].median())
 df['Avg_Calories_Burned'] = df['Avg_Calories_Burned'].fillna(df['Avg_Calories_Burned'].median())
-
 df['Total_Weight_Lifted_kg'] = df['Total_Weight_Lifted_kg'].fillna(df['Total_Weight_Lifted_kg'].median())
+df['Visits_Per_Month'] = df['Visits_Per_Month'].fillna(df['Visits_Per_Month'].median()) 
 
-df['Visits_Per_Month'] = df['Visits_Per_Month'].fillna(df['Visits_Per_Month'].median())
+# Data Transformation
+
 df['Join_Date'] = pd.to_datetime(df['Join_Date'])
+
+# Post Cleaning Validation
+
 print(df.isnull().sum())
 
-# Overall churn rate
+# Overall churn rate Calculation
 
 print (df['Churn'].value_counts())
 churn_rate =df['Churn'].value_counts(normalize=True) * 100
 print(churn_rate)
 
-# Churn by Membership Type: Segmentation 1
+# Churn by Membership Type: Customer Segmentation 
 
 print(pd.crosstab(df['Membership_Type'], df['Churn']))
 print(pd.crosstab(df['Membership_Type'], df['Churn'], normalize='index') * 100)
 
-# Churn by Gender
+# Churn by Gender (Demographic Segmentation)
 print(pd.crosstab(df['Gender'], df['Churn'], normalize='index') * 100)
 
 # Churn by Age Group
@@ -75,6 +85,7 @@ plt.xlabel('Churn')
 plt.ylabel('Visits Per Month')
 
 plt.show()
+
 
 
 
