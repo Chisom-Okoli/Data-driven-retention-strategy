@@ -37,29 +37,36 @@ print(pd.crosstab(df['Membership_Type'], df['Churn']))
 print(pd.crosstab(df['Membership_Type'], df['Churn'], normalize='index') * 100)
 
 # Churn by Gender (Demographic Segmentation)
+
 print(pd.crosstab(df['Gender'], df['Churn'], normalize='index') * 100)
 
 # Churn by Age Group
+
 df['Age_Group'] = pd.cut(df['Age'], bins=[18,25,35,45,55,70])
 print(pd.crosstab(df['Age_Group'], df['Churn'], normalize='index') * 100)
 
 # Validate sample size
+
 print(pd.crosstab(df['Age_Group'], df['Churn']))
 print(df['Churn'].value_counts(normalize=True) * 100)
 
 #Visits per hour by churn
+
 print(df.groupby('Churn')['Visits_Per_Month'].mean())
 
 #Average workout duration
+
 print(df.groupby('Churn')['Avg_Workout_Duration_Min'].mean())
 
 #Membership type distribution in 45-55
+
 group_45_55 = df[df['Age_Group'] == df['Age_Group'].cat.categories[3]]
 print(pd.crosstab(group_45_55['Membership_Type'], group_45_55['Churn']))
 print(df['Age_Group'].value_counts())
 print(df.groupby('Churn')['Visits_Per_Month'].mean())
 
 #Churn by membership type
+
 df['Membership_Type'].value_counts().plot(kind='bar')
 
 plt.title('Membership Type Distribution')
@@ -69,8 +76,8 @@ plt.ylabel('Number of Members')
 plt.show()
 
 #Churn rate ny Age Group
-pd.crosstab(df['Age_Group'], df['Churn']).plot(kind='bar')
 
+pd.crosstab(df['Age_Group'], df['Churn']).plot(kind='bar')
 plt.title('Churn by Age Group')
 plt.xlabel('Age Group')
 plt.ylabel('Count')
@@ -78,13 +85,14 @@ plt.ylabel('Count')
 plt.show()
 
 # visits Per Month vs Churn
-df.boxplot(column='Visits_Per_Month', by='Churn')
 
+df.boxplot(column='Visits_Per_Month', by='Churn')
 plt.title('Visits Per Month vs Churn')
 plt.xlabel('Churn')
 plt.ylabel('Visits Per Month')
 
 plt.show()
+
 
 
 
