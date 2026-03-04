@@ -138,6 +138,8 @@ Gender is not a strong churn driver.
 | 35–45      | 71.4%       | 28.6%    |
 | 45–55      | 67.6%       | 32.4%    |
 
+https://github.com/Chisom-Okoli/Data-driven-retention-strategy/blob/main/Churn%20by%20age%20group.png
+
 **Insight:**  
 Churn increases with age.  
 Members aged 35+ show significantly higher churn.
