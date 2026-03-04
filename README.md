@@ -155,6 +155,8 @@ Members aged 35+ show significantly higher churn.
 | No     | 16.83      |
 | Yes    | 6.74       |
 
+https://github.com/Chisom-Okoli/Data-driven-retention-strategy/blob/main/Boxplot%20of%20visit%20per%20month.png
+
 Churned members visit ~60% less frequently.
 
 **Low visit frequency is the strongest churn signal.**
